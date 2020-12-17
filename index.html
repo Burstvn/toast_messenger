@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="toast.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Toast Messenger</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            position: relative;
+        }
+
+        .main{
+            width: 100%;
+            padding-top: 50px;
+            position: relative;
+        }
+
+        .control{
+            width: 700px;
+            margin: 80vh auto;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .btn+.btn{
+            margin-left: 10px;
+        }
+
+        .btn{
+            padding: 10px 20px;
+            min-width: 50px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            color: #FFF;
+            font-weight: 700;
+        }
+
+        .btn--success{
+            background-color: #43d787;
+        }
+
+        .btn--error{
+            background-color: #f9461c;
+        }
+
+        .btn--warning{
+            background-color: #ffbb00;
+        }
+
+        .btn--info{
+            background-color: #0086d6;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="control">
+            <button class="btn btn--success" onclick="addSuccessToast()"> ADD SUCCESS </button>
+            <button class="btn btn--error" onclick="addErrorToast()"> ADD ERROR </button>
+            <button class="btn btn--info" onclick="addInfoToast()"> ADD INFO </button>
+            <button class="btn btn--warning" onclick="addWarningToast()"> ADD WARNING </button>
+        </div>
+    </div>
+
+    <script src="toastMessenger.js"></script>
+    <script>
+        function addErrorToast(){
+            addToast(main, 'Thất bại', 'Đăng ký thất bại vui lòng liên hệ QTV.', 'error')
+        }
+        function addSuccessToast(){
+            addToast(main, 'Thành công', 'Đăng ký thất bại vui lòng liên hệ QTV.', 'success')
+        }
+        function addInfoToast(){
+            addToast(main, 'Thông báo', 'Đây là thông báo Info.', 'info')
+        }
+        function addWarningToast(){
+            addToast(main, 'Cảnh báo', 'Tốc độ mạng quá chậm .', 'warning')
+        }
+    </script>
+</body>
+</html>
